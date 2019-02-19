@@ -1,0 +1,20 @@
+{
+  "id": "comp-kit05",
+  "config": {
+    "zoo_xmx": "1G",
+    "kafka_xmx": "1G",
+    "jmx_port": "2999",
+    "min_insync_replicas": "1",
+    "default_replication_factor": "1",
+    "default_number_partitions": "10",
+    "default_log_retention_hours": "24",
+    "log_retention_bytes": "1000000000",
+    "log_dirs": "/data/kafka-logs",
+    "log_roll_hours": "4",
+    "log_roll_jitter_hours": "1",
+    "kafka_vip": {
+      "ip_net": "backend_ipaddress",
+      "addr": "10.0.2.15",
+      "base_port": 9094,
+      "security": "PLAINTEXT"
+    }
