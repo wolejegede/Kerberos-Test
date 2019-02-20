@@ -1,7 +1,9 @@
 driver:
   name: rsync
-  hostname: compkafkait0101.softlayer.local
-  privileged: true # because Docker, systemd, and sysctl
+  ssh_key: ~/.vagrant.d/insecure_private_key
+  username: vagrant
+  hostname: compkafkakit0101.softlayer.local
+  privileged: true 
   chef_version: <%= ENV['CHEF_VERSION'] || 'current' %>
 
 transport:
@@ -19,11 +21,6 @@ platforms:
     image: rsync/centos-7
     pid_one_command: /usr/lib/systemd/systemd
 - name: centos7-x86_84
-  driver:
-    image: rsync/cento7-x86_84
-    pid_one_command: /bin/systemd
-    intermediate_instructions:
-      - RUN /usr/bin/apt-get update
 
 suites:
   - name: default
@@ -71,4 +68,4 @@ suites:
         krb5_conf:
           realms:
             realms:
-            - SOFTLAYER.LOCAL
+            - LOCAL
