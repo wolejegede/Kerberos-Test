@@ -7,10 +7,7 @@ driver:
   chef_version: <%= ENV['CHEF_VERSION'] || 'current' %>
 
 transport:
-  name: rsync
-
-verifier:
-  name: inspec
+  name: rsyn
 
 provisioner:
   name: rsync
